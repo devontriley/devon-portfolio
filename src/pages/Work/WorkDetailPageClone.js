@@ -34,7 +34,7 @@ const work = [
         description: 'This is the Steelroot description',
         image: 'steelroot_ui_mockup.jpg',
         url: 'https://steelroot.us',
-        headerColor: '#EE4449'
+        headerColor: '#1A2C5C'
     },
     {
         name: 'Safesoak',
