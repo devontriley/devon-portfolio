@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 import './WorkDetail.css'
@@ -6,57 +6,66 @@ import './WorkDetail.css'
 const work = [
     {
         name: 'Vinfen',
-        details: 'Wordpress, WooCommerce, Bootstrap, Gulp',
+        details: 'Wordpress Multisite, WooCommerce, Bootstrap, Gulp',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu semper dolor. Fusce at tempus enim. Pellentesque magna justo, venenatis sit amet erat ut, consequat maximus ex. Proin interdum ac lectus sed accumsan. Sed finibus lacus id nisl sollicitudin, non lacinia dolor tincidunt. Praesent quis lorem nulla. Curabitur sed libero eget arcu condimentum vestibulum. Nullam condimentum, tortor non pellentesque maximus, felis elit vestibulum risus, quis vulputate magna tellus a libero. Vestibulum sed vehicula massa, in luctus sapien. In rutrum erat non molestie elementum. Praesent fermentum nibh in ex pellentesque lobortis. Etiam placerat dignissim mi, vitae rhoncus ligula ornare sit amet. Etiam eget interdum diam.',
-        image: 'fpo_1.png'
+        image: 'vinfen_ui_mockup.jpg',
+        url: 'https://vinfen.org'
     },
     {
         name: 'Alarad',
         details: 'Wordpress, GSAP, Bootstrap, Webpack',
         description: 'This is the Alarad description',
-        image: 'fpo_2.png'
+        image: 'alarad_ui_mockup.jpg',
+        url: 'https://alaradcapital.com'
     },
     {
         name: 'Randys Worldwide',
         details: 'Core dna, Vue.js, Bootstrap, Webpack',
         description: 'This is the Randys Worldwide description',
-        image: 'fpo_3.png'
+        image: 'randys_ui_mockup.jpg',
+        url: 'https://randysworldwide.com'
     },
     {
         name: 'Steelroot',
         details: 'Wordpress, Bootstrap, Gulp',
         description: 'This is the Steelroot description',
-        image: 'fpo_4.png'
+        image: 'steelroot_ui_mockup.jpg',
+        url: 'https://steelroot.us'
     },
     {
         name: 'Safesoak',
         details: 'Shopify, Custom Liquid theme',
         description: 'This is the Safesoak description',
-        image: 'fpo_5.png'
+        image: 'safesoak_ui_mockup.jpg',
+        url: 'https://mysafesoak.com'
     },
     {
         name: 'Transhealth',
         details: 'Wordpress, GSAP, Paper.js, Bootstrap, Gulp',
         description: 'This is the Transhealth description',
-        image: 'fpo_6.png'
+        image: 'transhealth_ui_mockup.jpg',
+        url: 'https://transhealth.org'
     },
     {
         name: 'Fully Human Supplements',
         details: 'Wordpress, WooCommerce, Bootstrap, Gulp',
         description: 'This is the FHS description',
-        image: 'fpo_7.png'
+        image: 'fhs_ui_mockup.jpg',
+        url: 'https://fullyhumansupplements.com'
     },
     {
         name: 'Universal Stone Imports',
         details: 'Wordpress, Bootstrap, Gulp',
         description: 'This is the USI description',
-        image: 'fpo_8.png'
+        image: 'usi_ui_mockup.jpg',
+        url: 'https://unistoneimports.com'
     },
     {
         name: 'DriveForce',
         details: 'Wordpress, GSAP, Bootstrap, Gulp',
         description: 'This is the DriveForce description',
-        image: 'fpo_9.png'
+        image: 'driveforce_ui_mockup.jpg',
+        url: 'https://devonr52.sg-host.com'
     }
 ]
 
@@ -69,7 +78,7 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
     const [animateOut, setAnimateOut] = useState(false)
     const [crossfadeImage, setCrossfadeImage] = useState('')
 
-    const handleClick = (direction = 'prev') => {
+    const handleClick = useCallback((direction = 'prev') => {
         let nextIndex = (currentWorkIndex + (direction === 'prev' ? -1 : 1) + work.length) % work.length
 
         setCrossfadeImage('/images/'+work[nextIndex].image)
@@ -80,14 +89,23 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
             setCurrentWorkIndex(nextIndex)
             setInProp(true)
         }, 500)
-        
-        // setAnimateOut(true)
+    }, [currentWorkIndex])
 
-        // setTimeout(() => {
-        //     setCurrentWorkIndex(nextIndex)
-        //     setAnimateOut(false)
-        // }, 300)
-    }
+    useEffect(() => {
+        const handleKeyPress = (event) => {
+          if (event.key === 'ArrowDown') {
+            handleClick('next')
+          } else if (event.key === 'ArrowUp') {
+            handleClick('prev')
+          }
+        };
+    
+        window.addEventListener('keydown', handleKeyPress);
+    
+        return () => {
+          window.removeEventListener('keydown', handleKeyPress);
+        };
+      }, [handleClick]);
 
     return (
         <div>
@@ -104,7 +122,15 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
 
                     <div className="workDetailContent h-full relative z-10 flex items-center justify-center">
                         <div className="workDescription" style={{ width: '80%' }}>
-                            <h1 className="text-4xl font-bold mb-3 select-none">{work[currentWorkIndex].name}</h1>
+                            <h1 className="text-4xl font-bold mb-3 select-none">
+                                <a href={work[currentWorkIndex].url} target="_blank">
+                                    {work[currentWorkIndex].name}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="inline-block ml-3" viewBox="0 0 16 16">
+                                        <path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                        <path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                    </svg>
+                                </a>
+                            </h1>
                             <p className="font-bold">{work[currentWorkIndex].details}</p>
                             <p className="select-none">{work[currentWorkIndex].description}</p>
                         </div>
