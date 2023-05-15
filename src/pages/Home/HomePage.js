@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import fetchContent from '../../services/ContentfulService'
+// import fetchContent from '../../services/ContentfulService'
 
 const HomePage = () => {
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const content = await fetchContent({ title: 'Home' })
-            setData(content)
-            setIsLoading(false)
-        }
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const content = await fetchContent({ title: 'Home' })
+    //         setData(content)
+    //         setIsLoading(false)
+    //     }
 
-        // fetchData()
-    }, [])
+    //     fetchData()
+    // }, [])
 
     return (
         <div className={`flex items-center justify-center h-screen`}>
