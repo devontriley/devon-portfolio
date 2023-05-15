@@ -1,0 +1,115 @@
+@media (max-width: 1023px) {
+    .workDetailGrid {
+        grid-template-rows: auto 1fr;
+    }
+
+    .workDetailImage {
+        height: clamp(300px, 40vw, 400px);
+    }
+}
+
+/* Page animation */
+
+.work-detail-page-enter .workDescription {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.work-detail-page-enter-active .workDescription {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms 300ms;
+}
+
+.work-detail-page-enter .workDetailControls a {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.work-detail-page-enter-active .workDetailControls a {
+    opacity: 1;
+    transform: translateX(0.5rem);
+    transition: all 200ms;
+}
+
+.work-detail-page-enter-active .workDetailControls a:first-child {
+    transition-delay: 700ms;
+}
+
+.work-detail-page-enter-active .workDetailControls a:last-child {
+    transition-delay: 800ms;
+}
+
+.work-detail-page-enter-done  .workDetailControls a {
+    transform: translateX(0.5rem);
+    transition: transform 300ms;
+}
+
+.work-detail-page-enter-done .workDetailControls a:hover {
+    transition: transform 300ms;
+    transform: translatex(0);
+}
+
+.work-detail-page-enter .workDetailImage {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.work-detail-page-enter-active .workDetailImage {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 500ms;
+}
+
+/* Description animation */
+
+.work-detail-enter .workDescription {
+    opacity: 0;
+}
+
+.work-detail-enter[data-animate-direction="next"] .workDescription {
+    transform: translateY(50px);
+}
+
+.work-detail-enter[data-animate-direction="prev"] .workDescription {
+    transform: translateY(-50px);
+}
+
+.work-detail-enter-active[data-animate-direction] .workDescription {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all ease 500ms;
+}
+
+.work-detail-exit .workDescription {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.work-detail-exit-active .workDescription {
+    opacity: 0;
+    transition: all ease 500ms;
+}
+
+.work-detail-exit-active[data-animate-direction="next"] .workDescription {
+    transform: translateY(-50px);
+}
+
+.work-detail-exit-active[data-animate-direction="prev"] .workDescription {
+    transform: translateY(50px);
+}
+
+/* Image transition */
+
+.workImage {
+    overflow: hidden;
+}
+
+.work-detail-exit .workImage {
+    opacity: 1;
+}
+
+.work-detail-exit-active .workImage {
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+}

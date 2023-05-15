@@ -1,0 +1,79 @@
+import React, { createRef, useEffect } from 'react'
+import { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider, useLocation, useOutlet } from 'react-router-dom'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
+import Header from './components/Header/Header'
+import { AnimateDirectionProvider } from './AnimateDirectionContext'
+import { routes } from './routes'
+import './index.css'
+import reportWebVitals from './reportWebVitals';
+
+const App = () => {
+  const location = useLocation()
+  const currentOutlet = useOutlet()
+  const nodeRef = createRef(null)
+  const transitionClassPrefix = location.pathname.includes('/work/') ? 'work-detail-page' : (( location.pathname === '/work' ) ? 'work' : 'page')
+  const transitionInDuration = location.pathname.includes('/work/') ? 1000 : (( location.pathname === '/work' ) ? 5000 : 1000)
+  const transitionOutDuration = location.pathname.includes('/work/') ? 500 : 500
+
+  // Preload images for Work Detail Pages
+  useEffect(() => {
+    const images = ['fpo_1.png', 'fpo_2.png', 'fpo_3.png', 'fpo_4.png', 'fpo_5.png', 'fpo_6.png', 'fpo_7.png', 'fpo_8.png', 'fpo_9.png']
+
+    images.forEach((image) => {
+        const img = new Image()
+        img.src = '/images/'+image
+    })
+}, [])
+
+  return (
+    <>
+      <Header routes={routes.filter((route) => route.name !== 'Work Detail')} />
+
+      <AnimateDirectionProvider>
+        <SwitchTransition>
+          <CSSTransition
+            key={location.pathname}
+            nodeRef={nodeRef}
+            timeout={{
+              enter: transitionInDuration,
+              exit: transitionOutDuration
+            }}
+            classNames={transitionClassPrefix}
+            unmountOnExit
+          >
+            {(state) => (
+              <div ref={nodeRef} className="page">
+                {currentOutlet}
+              </div>
+            )}
+          </CSSTransition>
+        </SwitchTransition>
+      </AnimateDirectionProvider>
+    </>
+  )
+}
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: routes.map((route) => ({
+      index: route.path === '/',
+      path: route.path === '/' ? undefined : route.path,
+      element: route.element,
+    })),
+  },
+])
+
+const root = createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+)
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
