@@ -8,7 +8,7 @@ const HeaderNavLink = ({ name, path }) => {
             <NavLink 
             key={path}
             to={path}
-            className={`inline-block mx-3 text-lg text-white leading-none ${linkColor}`}
+            className={`inline-block mx-3 text-lg leading-none ${linkColor}`}
         >
             {name}
         </NavLink>
