@@ -9,63 +9,72 @@ const work = [
         details: 'Wordpress Multisite, WooCommerce, Bootstrap, Gulp',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu semper dolor. Fusce at tempus enim. Pellentesque magna justo, venenatis sit amet erat ut, consequat maximus ex. Proin interdum ac lectus sed accumsan. Sed finibus lacus id nisl sollicitudin, non lacinia dolor tincidunt. Praesent quis lorem nulla. Curabitur sed libero eget arcu condimentum vestibulum. Nullam condimentum, tortor non pellentesque maximus, felis elit vestibulum risus, quis vulputate magna tellus a libero. Vestibulum sed vehicula massa, in luctus sapien. In rutrum erat non molestie elementum. Praesent fermentum nibh in ex pellentesque lobortis. Etiam placerat dignissim mi, vitae rhoncus ligula ornare sit amet. Etiam eget interdum diam.',
         image: 'vinfen_ui_mockup.jpg',
-        url: 'https://vinfen.org'
+        url: 'https://vinfen.org',
+        headerColor: '#037993'
     },
     {
         name: 'Alarad',
         details: 'Wordpress, GSAP, Bootstrap, Webpack',
         description: 'This is the Alarad description',
         image: 'alarad_ui_mockup.jpg',
-        url: 'https://alaradcapital.com'
+        url: 'https://alaradcapital.com',
+        headerColor: '#C48A5C'
     },
     {
         name: 'Randys Worldwide',
         details: 'Core dna, Vue.js, Bootstrap, Webpack',
         description: 'This is the Randys Worldwide description',
         image: 'randys_ui_mockup.jpg',
-        url: 'https://randysworldwide.com'
+        url: 'https://randysworldwide.com',
+        headerColor: '#ED481C'
     },
     {
         name: 'Steelroot',
         details: 'Wordpress, Bootstrap, Gulp',
         description: 'This is the Steelroot description',
         image: 'steelroot_ui_mockup.jpg',
-        url: 'https://steelroot.us'
+        url: 'https://steelroot.us',
+        headerColor: '#EE4449'
     },
     {
         name: 'Safesoak',
         details: 'Shopify, Custom Liquid theme',
         description: 'This is the Safesoak description',
         image: 'safesoak_ui_mockup.jpg',
-        url: 'https://mysafesoak.com'
+        url: 'https://mysafesoak.com',
+        headerColor: '#2F358F'
     },
     {
         name: 'Transhealth',
         details: 'Wordpress, GSAP, Paper.js, Bootstrap, Gulp',
         description: 'This is the Transhealth description',
         image: 'transhealth_ui_mockup.jpg',
-        url: 'https://transhealth.org'
+        url: 'https://transhealth.org',
+        headerColor: '#EE6452'
     },
     {
         name: 'Fully Human Supplements',
         details: 'Wordpress, WooCommerce, Bootstrap, Gulp',
         description: 'This is the FHS description',
         image: 'fhs_ui_mockup.jpg',
-        url: 'https://fullyhumansupplements.com'
+        url: 'https://fullyhumansupplements.com',
+        headerColor: '#007BA7'
     },
     {
         name: 'Universal Stone Imports',
         details: 'Wordpress, Bootstrap, Gulp',
         description: 'This is the USI description',
         image: 'usi_ui_mockup.jpg',
-        url: 'https://unistoneimports.com'
+        url: 'https://unistoneimports.com',
+        headerColor: '#81BB42'
     },
     {
         name: 'DriveForce',
         details: 'Wordpress, GSAP, Bootstrap, Gulp',
         description: 'This is the DriveForce description',
         image: 'driveforce_ui_mockup.jpg',
-        url: 'https://devonr52.sg-host.com'
+        url: 'https://devonr52.sg-host.com',
+        headerColor: '#437663'
     }
 ]
 
@@ -122,7 +131,7 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
 
                     <div className="workDetailContent h-full relative z-10 flex items-center justify-center">
                         <div className="workDescription" style={{ width: '80%' }}>
-                            <h1 className="text-4xl font-bold mb-3 select-none">
+                            <h1 className="text-4xl font-bold mb-3 select-none" style={{ color: `${work[currentWorkIndex].headerColor}`}}>
                                 <a href={work[currentWorkIndex].url} target="_blank">
                                     {work[currentWorkIndex].name}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="inline-block ml-3" viewBox="0 0 16 16">
