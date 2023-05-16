@@ -7,31 +7,35 @@ const work = [
     {
         name: 'Vinfen',
         details: 'Wordpress Multisite, WooCommerce, Bootstrap, Gulp',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu semper dolor. Fusce at tempus enim. Pellentesque magna justo, venenatis sit amet erat ut, consequat maximus ex. Proin interdum ac lectus sed accumsan. Sed finibus lacus id nisl sollicitudin, non lacinia dolor tincidunt. Praesent quis lorem nulla. Curabitur sed libero eget arcu condimentum vestibulum. Nullam condimentum, tortor non pellentesque maximus, felis elit vestibulum risus, quis vulputate magna tellus a libero. Vestibulum sed vehicula massa, in luctus sapien. In rutrum erat non molestie elementum. Praesent fermentum nibh in ex pellentesque lobortis. Etiam placerat dignissim mi, vitae rhoncus ligula ornare sit amet. Etiam eget interdum diam.',
+        companyDescription: 'Vinfen is a leading nonprofit that specializes in providing community-based services to individuals with disabilities.',
+        description: 'For years Vinfen was stuck with an overpriced, outdated, and subpar hosting provider. I migrated their five websites to a new hosting provider under a single Wordpress Multisite - allowing the administrators to easily manage everything from a single dashboard. I also built two custom Wordpress themes with an extensive module library to recreate their existing content with a modern look and feel.',
         image: 'vinfen_ui_mockup.jpg',
         url: 'https://vinfen.org',
         headerColor: '#037993'
     },
     {
-        name: 'Alarad',
+        name: 'Alarad Capital',
         details: 'Wordpress, GSAP, Bootstrap, Webpack',
-        description: 'This is the Alarad description',
+        companyDescription: 'Alarad Capital is an investment firm built to grow the wealth of it\'s investors for the long term.',
+        description: 'The primary challenge to overcome was true differentiation from the competition. I helped build a custom Wordpress theme based on the beautiful design system my partners developed. We thoughtfully incorporated animations and transitions to create an elegant and sophisticated feel.',
         image: 'alarad_ui_mockup.jpg',
         url: 'https://alaradcapital.com',
         headerColor: '#C48A5C'
     },
     {
-        name: 'Randys Worldwide',
+        name: 'RANDYS Worldwide',
         details: 'Core dna, Vue.js, Bootstrap, Webpack',
-        description: 'This is the Randys Worldwide description',
+        companyDescription: 'RANDYS Worldwide is the leading supplier in the United States for differential gears, axles, drivelines, and more.',
+        description: 'My team was hired to help RANDYS improve their user interface, assist in developing new features, and provide ongoing development support. The most exicting feature I helped develop was the Parts Portal - a Vue.js "garage" allowing users to filter results based on their selected vehicle. I also implemented a fresh new UI that included new category and product display pages.',
         image: 'randys_ui_mockup.jpg',
         url: 'https://randysworldwide.com',
         headerColor: '#ED481C'
     },
     {
-        name: 'Steelroot',
+        name: 'Steel Root',
         details: 'Wordpress, Bootstrap, Gulp',
-        description: 'This is the Steelroot description',
+        companyDescription: 'Steel Root is the first cybersecurity firm to provide end-to-end services for the U.S. Defense Industrial Base.',
+        description: 'Visual identity and publisher useablility were the main goals of this project. I developed a custom Wordpress theme with a particular focus on content management. I built a modular system that allowed the stakeholders to easily create and edit custom pages.',
         image: 'steelroot_ui_mockup.jpg',
         url: 'https://steelroot.us',
         headerColor: '#1A2C5C'
@@ -39,7 +43,8 @@ const work = [
     {
         name: 'Safesoak',
         details: 'Shopify, Custom Liquid theme',
-        description: 'This is the Safesoak description',
+        companyDescription: 'Safesoak is a product that allows people with neuropahty to safely soak their feet.',
+        description: 'This project was my first opportunity to build a custom Shopify theme. I learned the Liquid templating language which enabled me to create an easily editable backend as well as replicate the UI system that my team designed.',
         image: 'safesoak_ui_mockup.jpg',
         url: 'https://mysafesoak.com',
         headerColor: '#2F358F'
@@ -47,7 +52,8 @@ const work = [
     {
         name: 'Transhealth',
         details: 'Wordpress, GSAP, Paper.js, Bootstrap, Gulp',
-        description: 'This is the Transhealth description',
+        companyDescription: 'Transhealth is a trans-led organization serving trans and gender-diverse individuals and families.',
+        description: 'I\'m proud to have had the opportunity to work with such a fantastic organization. I was tasked with creating a new website that brought their new visual identity to the web. I developed a custom Wordpress theme that was lightweight and easily editable.',
         image: 'transhealth_ui_mockup.jpg',
         url: 'https://transhealth.org',
         headerColor: '#EE6452'
@@ -55,15 +61,17 @@ const work = [
     {
         name: 'Fully Human Supplements',
         details: 'Wordpress, WooCommerce, Bootstrap, Gulp',
-        description: 'This is the FHS description',
+        companyDescription: 'Fully Human Supplements offer all-natural, plant-based supplements to fight chronic inflammation.',
+        description: 'Fully Human was in need of an ecommerce website that could effectively promote their brand, educate their customers, and sell their products. I built a custom Wordpress theme that utilized WooCommerce to satisfy the needs of the stakeholders and their customers.',
         image: 'fhs_ui_mockup.jpg',
         url: 'https://fullyhumansupplements.com',
         headerColor: '#007BA7'
     },
     {
-        name: 'Universal Stone Imports',
-        details: 'Wordpress, Bootstrap, Gulp',
-        description: 'This is the USI description',
+        name: 'Universal Stone',
+        details: 'Wordpress, Bootstrap, Gulp, UI Design',
+        companyDescription: 'Universal Stone is a leading importer of top quality natural stone products from around the world',
+        description: 'Universal Stone had been stuck with a set of poorly designed and developed Wordpress websites for years. I merged both sites into one with an updated UI. I\'m currently working on several new features including a Dropbox integration for users to upload project photos, and a live product inventory that pulls data from their content management software.',
         image: 'usi_ui_mockup.jpg',
         url: 'https://unistoneimports.com',
         headerColor: '#81BB42'
@@ -71,7 +79,8 @@ const work = [
     {
         name: 'DriveForce',
         details: 'Wordpress, GSAP, Bootstrap, Gulp',
-        description: 'This is the DriveForce description',
+        companyDescription: 'DriveForce sells golf\'s first-ever pre-round performance blend, designed to keep you at your best for a full 18.',
+        description: 'DriveForce is a startup that worked with my team from their initial conception. Their website needed to strongly convey their brand, and effectively market and sell their product. I used Wordpress and WooCommerce to develop a custom theme with a modular content system that was used to achieve these goals.',
         image: 'driveforce_ui_mockup.jpg',
         url: 'https://devonr52.sg-host.com',
         headerColor: '#437663'
@@ -140,8 +149,11 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
                                     </svg>
                                 </a>
                             </h1>
-                            <p className="font-bold">{work[currentWorkIndex].details}</p>
-                            <p className="select-none">{work[currentWorkIndex].description}</p>
+                            {work[currentWorkIndex].companyDescription && <p className="text-sm italic">{work[currentWorkIndex].companyDescription}</p>}
+                            <div className="mt-5">
+                                <p className="font-bold">{work[currentWorkIndex].details}</p>
+                                <p className="select-none">{work[currentWorkIndex].description}</p>
+                            </div>
                         </div>
 
                         <div className="workDetailControls absolute right-0">
