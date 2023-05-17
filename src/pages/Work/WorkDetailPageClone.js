@@ -57,7 +57,7 @@ const work = [
         url: 'https://mysafesoak.com',
         headerColor: '#6ECBE8',
         textColor: '#ffffff',
-        bgColor: '#282D7A'
+        bgColor: '#181B48'
     },
     {
         name: 'Transhealth',
