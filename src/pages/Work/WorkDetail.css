@@ -42,11 +42,11 @@
 
 .work-detail-page-enter-done  .workDetailControls a {
     transform: translateX(0.5rem);
-    transition: transform 300ms;
+    transition: all ease 300ms;
 }
 
 .work-detail-page-enter-done .workDetailControls a:hover {
-    transition: transform 300ms;
+    transition: all ease 300ms;
     transform: translatex(0);
 }
 
