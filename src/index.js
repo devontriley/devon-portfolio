@@ -50,6 +50,8 @@ const App = () => {
           </CSSTransition>
         </SwitchTransition>
       </AnimateDirectionProvider>
+
+      <div className="noise"></div>
     </>
   )
 }

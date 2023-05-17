@@ -2,7 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 
 const HeaderNavLink = ({ name, path }) => {
     const location = useLocation()
-    const linkColor = ((name === 'Work' && location.pathname.includes('work')) || location.pathname === path) ? 'text-red-500' : 'text-black'
+    const linkColor = ((name === 'Work' && location.pathname.includes('work')) || location.pathname === path) ? 'text-blue-500' : 'text-black'
     return (
         <li className="inline-block">
             <NavLink 
@@ -19,9 +19,9 @@ const HeaderNavLink = ({ name, path }) => {
 const Header = ({ routes }) => {
     return (
         <>
-            <span className={`absolute z-30 top-0 left-1/2 -translate-x-1/2 text-xl drop-shadow-lg rounded-b-lg py-2 px-7 bg-black text-white`}>Devon Riley</span>
+            <span className={`absolute z-30 top-0 left-1/2 -translate-x-1/2 text-xl drop-shadow-lg rounded-b-lg py-2 px-7 bg-black text-white whitespace-nowrap`}>Devon Riley</span>
             <nav className="absolute z-30 bottom-5 left-1/2 -translate-x-1/2 border-solid border border-black rounded-full py-3 px-7 bg-white drop-shadow-md">
-                <ul>
+                <ul className="whitespace-nowrap">
                     <HeaderNavLink name="About" path="/" />
                     <HeaderNavLink name="Work" path="/work" />
                     <HeaderNavLink name="Contact" path="/contact" />

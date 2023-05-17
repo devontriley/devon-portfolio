@@ -1,12 +1,75 @@
+.workDetailImage {
+    margin: 70px 20px 0 20px;
+}
+
+.workDetailContent {
+    margin: 0 20px;
+}
+
+.workDetailControls {
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    transform: translateX(-50%);
+}
+
+.workDetailControls button {
+    background: rgba(0,0,0,0.5);
+}
+
+.workDetailControls button:hover {
+    background: rgba(0,0,0,0.7);
+}
+
 @media (max-width: 1023px) {
     .workDetailGrid {
         grid-template-rows: auto 1fr;
     }
 
     .workDetailImage {
-        height: clamp(300px, 40vw, 400px);
+        height: clamp(150px, 40vw, 300px);
     }
 }
+
+@media (min-width: 640px) {
+    .workDescription {
+        width: 80%;
+        margin-bottom: 90px;
+    }
+
+    .workDetailContent {
+        margin: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .workDetailImage {
+        margin: 70px 20px 90px 0;
+    }
+
+    .workDetailControls {
+        right: 0;
+        left: auto;
+        bottom: auto;
+        transform: translateX(0);
+    }
+
+    .workDetailControls button {
+        display: block;
+    }
+
+    .workDetailContent {
+        padding-right: 40px;
+    }
+
+    .workDescription {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
 
 /* Page animation */
 
@@ -21,33 +84,35 @@
     transition: all 500ms 300ms;
 }
 
-.work-detail-page-enter .workDetailControls a {
-    opacity: 0;
-    transform: translateX(100%);
-}
-
-.work-detail-page-enter-active .workDetailControls a {
-    opacity: 1;
-    transform: translateX(0.5rem);
-    transition: all 200ms;
-}
-
-.work-detail-page-enter-active .workDetailControls a:first-child {
-    transition-delay: 700ms;
-}
-
-.work-detail-page-enter-active .workDetailControls a:last-child {
-    transition-delay: 800ms;
-}
-
-.work-detail-page-enter-done  .workDetailControls a {
-    transform: translateX(0.5rem);
-    transition: all ease 300ms;
-}
-
-.work-detail-page-enter-done .workDetailControls a:hover {
-    transition: all ease 300ms;
-    transform: translatex(0);
+@media (min-width: 1024px) {
+    .work-detail-page-enter .workDetailControls button {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    
+    .work-detail-page-enter-active .workDetailControls button {
+        opacity: 1;
+        transform: translateX(0.5rem);
+        transition: all 200ms;
+    }
+    
+    .work-detail-page-enter-active .workDetailControls button:first-child {
+        transition-delay: 700ms;
+    }
+    
+    .work-detail-page-enter-active .workDetailControls button:last-child {
+        transition-delay: 800ms;
+    }
+    
+    .workDetailControls button {
+        transform: translateX(0.5rem);
+        transition: all ease 300ms;
+    }
+    
+    .workDetailControls button:hover {
+        transition: all ease 300ms;
+        transform: translatex(0);
+    }
 }
 
 .work-detail-page-enter .workDetailImage {
@@ -67,23 +132,13 @@
     opacity: 0;
 }
 
-.work-detail-enter[data-animate-direction="next"] .workDescription {
-    transform: translateY(50px);
-}
-
-.work-detail-enter[data-animate-direction="prev"] .workDescription {
-    transform: translateY(-50px);
-}
-
 .work-detail-enter-active[data-animate-direction] .workDescription {
     opacity: 1;
-    transform: translateY(0);
     transition: all ease 500ms;
 }
 
 .work-detail-exit .workDescription {
     opacity: 1;
-    transform: translateY(0);
 }
 
 .work-detail-exit-active .workDescription {
@@ -91,12 +146,34 @@
     transition: all ease 500ms;
 }
 
-.work-detail-exit-active[data-animate-direction="next"] .workDescription {
-    transform: translateY(-50px);
-}
-
-.work-detail-exit-active[data-animate-direction="prev"] .workDescription {
-    transform: translateY(50px);
+@media(min-width: 640px) {
+    .work-detail-enter .workDescription {
+        opacity: 0;
+    }
+    
+    .work-detail-enter[data-animate-direction="next"] .workDescription {
+        transform: translateY(50px);
+    }
+    
+    .work-detail-enter[data-animate-direction="prev"] .workDescription {
+        transform: translateY(-50px);
+    }
+    
+    .work-detail-enter-active[data-animate-direction] .workDescription {
+        transform: translateY(0);
+    }
+    
+    .work-detail-exit .workDescription {
+        transform: translateY(0);
+    }
+    
+    .work-detail-exit-active[data-animate-direction="next"] .workDescription {
+        transform: translateY(-50px);
+    }
+    
+    .work-detail-exit-active[data-animate-direction="prev"] .workDescription {
+        transform: translateY(50px);
+    }
 }
 
 /* Image transition */

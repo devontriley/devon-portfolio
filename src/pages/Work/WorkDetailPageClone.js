@@ -13,7 +13,7 @@ const work = [
         url: 'https://vinfen.org',
         headerColor: '#BDE551',
         textColor: '#ffffff',
-        bgColor: '#037993'
+        bgColor: '#03667C'
     },
     {
         name: 'Alarad Capital',
@@ -24,7 +24,7 @@ const work = [
         url: 'https://alaradcapital.com',
         headerColor: '#D89663',
         textColor: '#ffffff',
-        bgColor: '#172911'
+        bgColor: '#13220E'
     },
     {
         name: 'RANDYS Worldwide',
@@ -33,9 +33,9 @@ const work = [
         description: 'My team was hired to help RANDYS improve their user interface, assist in developing new features, and provide ongoing development support. The most exicting feature I helped develop was the Parts Portal - a Vue.js "garage" allowing users to filter results based on their selected vehicle. I also implemented a fresh new UI that included new category and product display pages.',
         image: 'randys_ui_mockup.jpg',
         url: 'https://randysworldwide.com',
-        headerColor: '#ffffff',
+        headerColor: '#111111',
         textColor: '#ffffff',
-        bgColor: '#ED481C'
+        bgColor: '#D23B11'
     },
     {
         name: 'Steel Root',
@@ -46,7 +46,7 @@ const work = [
         url: 'https://steelroot.us',
         headerColor: '#F7525A',
         textColor: '#ffffff',
-        bgColor: '#1A2C5C'
+        bgColor: '#16254E'
     },
     {
         name: 'Safesoak',
@@ -66,9 +66,9 @@ const work = [
         description: 'I\'m proud to have had the opportunity to work with such a fantastic organization. I was tasked with creating a new website that brought their new visual identity to the web. I developed a custom Wordpress theme that was lightweight and easily editable.',
         image: 'transhealth_ui_mockup.jpg',
         url: 'https://transhealth.org',
-        headerColor: '#EF4738',
-        textColor: '#1d2529',
-        bgColor: '#A5C5D9'
+        headerColor: '#253B5A',
+        textColor: '#ffffff',
+        bgColor: '#6BA0C1'
     },
     {
         name: 'Fully Human Supplements',
@@ -77,9 +77,9 @@ const work = [
         description: 'Fully Human was in need of an ecommerce website that could effectively promote their brand, educate their customers, and sell their products. I built a custom Wordpress theme that utilized WooCommerce to satisfy the needs of the stakeholders and their customers.',
         image: 'fhs_ui_mockup.jpg',
         url: 'https://fullyhumansupplements.com',
-        headerColor: '#00352f',
+        headerColor: '#01F8E0',
         textColor: '#ffffff',
-        bgColor: '#01B19E'
+        bgColor: '#019889'
     },
     {
         name: 'Universal Stone',
@@ -90,7 +90,7 @@ const work = [
         url: 'https://unistoneimports.com',
         headerColor: '#273814',
         textColor: '#ffffff',
-        bgColor: '#81BB42'
+        bgColor: '#6FA239'
     },
     {
         name: 'DriveForce',
@@ -101,7 +101,7 @@ const work = [
         url: 'https://devonr52.sg-host.com',
         headerColor: '#DB4443',
         textColor: '#ffffff',
-        bgColor: '#14302B'
+        bgColor: '#112824'
     }
 ]
 
@@ -147,17 +147,18 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
         <div>
             <CSSTransition nodeRef={nodeRef} in={inProp} timeout={500} classNames="work-detail">
                 <div className="workDetailGrid w-screen h-screen grid lg:grid-flow-col lg:grid-cols-2"
+                    style={{ backgroundColor: `${work[currentWorkIndex].bgColor}`}}
                     data-animate-out={animateOut} 
                     data-animate-direction={animateDirection}
                     ref={nodeRef}
                 >
-                    <div className="workDetailImage relative z-20 overflow-hidden lg:order-2">
+                    <div className="workDetailImage relative z-20 overflow-hidden rounded-xl lg:order-2">
                         <img src={`/images/${work[currentWorkIndex].image}`} className="workImage absolute z-20 object-cover w-full h-full select-none" alt="" />
                         <img src={crossfadeImage} className="absolute z-0 object-cover w-full h-full select-none" />
                     </div>
 
-                    <div className="workDetailContent h-full relative z-10 flex items-center justify-center" style={{ backgroundColor: `${work[currentWorkIndex].bgColor}`}}>
-                        <div className="workDescription" style={{ width: '80%', color: `${work[currentWorkIndex].textColor}` }}>
+                    <div className="workDetailContent h-full relative z-10 flex pt-7 sm:pt-0 sm:items-center justify-center">
+                        <div className="workDescription" style={{ color: `${work[currentWorkIndex].textColor}` }}>
                             <h1 className="text-4xl font-bold mb-3 select-none" style={{ color: `${work[currentWorkIndex].headerColor}`}}>
                                 <a href={work[currentWorkIndex].url} target="_blank">
                                     {work[currentWorkIndex].name}
@@ -174,17 +175,23 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
                             </div>
                         </div>
 
-                        <div className="workDetailControls absolute right-0">
-                            <a onClick={() => handleClick('prev')} className="block p-3 pr-5 my-3 bg-gray-200 hover:bg-gray-400 cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-up" viewBox="0 0 16 16">
+                        <div className="workDetailControls">
+                            <button 
+                                onClick={() => handleClick('prev')} 
+                                className="p-3 pr-5 cursor-pointer"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" className="bi bi-arrow-up" viewBox="0 0 16 16">
                                     <path fillRule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
                                 </svg>
-                            </a>
-                            <a onClick={() => handleClick('next')} className="block p-3 pr-5 my-3 bg-gray-200 hover:bg-gray-400 cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down" viewBox="0 0 16 16">
+                            </button>
+                            <button 
+                                onClick={() => handleClick('next')} 
+                                className="p-3 pr-5 cursor-pointer"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" className="bi bi-arrow-down" viewBox="0 0 16 16">
                                     <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
                                 </svg>
-                            </a>
+                            </button>
                         </div>
                     </div>
 

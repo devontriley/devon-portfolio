@@ -6,13 +6,13 @@ import ContactPage from './pages/Contact/ContactPage'
 
 export const workDetailPages = [
     { name: 'Vinfen' },
-    { name: 'Alarad' },
-    { name: 'Randys Worldwide' },
-    { name: 'Steelroot' },
+    { name: 'Alarad Capital' },
+    { name: 'RANDYS Worldwide' },
+    { name: 'Steel Root' },
     { name: 'Safesoak' },
     { name: 'Transhealth' },
     { name: 'Fully Human Supplements' },
-    { name: 'Universal Stone Imports' },
+    { name: 'Universal Stone' },
     { name: 'DriveForce' }
 ]
 
