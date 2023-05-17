@@ -57,7 +57,7 @@ const work = [
         url: 'https://mysafesoak.com',
         headerColor: '#6ECBE8',
         textColor: '#ffffff',
-        bgColor: '#2F358F'
+        bgColor: '#282D7A'
     },
     {
         name: 'Transhealth',
@@ -151,7 +151,7 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
                     data-animate-direction={animateDirection}
                     ref={nodeRef}
                 >
-                    <div className="workDetailImage relative z-20 overflow-hidden lg:order-2" style={{ boxShadow: '-10px 0 10px rgba(0,0,0,0.2)' }}>
+                    <div className="workDetailImage relative z-20 overflow-hidden lg:order-2">
                         <img src={`/images/${work[currentWorkIndex].image}`} className="workImage absolute z-20 object-cover w-full h-full select-none" alt="" />
                         <img src={crossfadeImage} className="absolute z-0 object-cover w-full h-full select-none" />
                     </div>
