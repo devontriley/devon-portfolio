@@ -110,6 +110,7 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
     const nodeRef = useRef(null)
     const [inProp, setInProp] = useState(true)
     const [currentWorkIndex, setCurrentWorkIndex] = useState(work.findIndex(w => w.name === name))
+    const [bgColor, setBGColor] = useState(work[currentWorkIndex].bgColor)
     const [animateDirection, setAnimateDirection] = useState('next')
     const [animateOut, setAnimateOut] = useState(false)
     const [crossfadeImage, setCrossfadeImage] = useState('')
@@ -117,6 +118,7 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
     const handleClick = useCallback((direction = 'prev') => {
         let nextIndex = (currentWorkIndex + (direction === 'prev' ? -1 : 1) + work.length) % work.length
 
+        setBGColor(work[nextIndex].bgColor)
         setCrossfadeImage(work[nextIndex].image)
         setAnimateDirection(direction)
         setInProp(false)
@@ -127,6 +129,7 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
         }, 500)
     }, [currentWorkIndex])
 
+    // Control pager using arrow keys
     useEffect(() => {
         const handleKeyPress = (event) => {
           if (event.key === 'ArrowDown') {
@@ -147,7 +150,7 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
         <div>
             <CSSTransition nodeRef={nodeRef} in={inProp} timeout={500} classNames="work-detail">
                 <div className="workDetailGrid w-screen h-screen grid lg:grid-flow-col lg:grid-cols-2"
-                    style={{ backgroundColor: `${work[currentWorkIndex].bgColor}`}}
+                    style={{ backgroundColor: `${bgColor}`}}
                     data-animate-out={animateOut} 
                     data-animate-direction={animateDirection}
                     ref={nodeRef}
@@ -180,17 +183,14 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
                                 onClick={() => handleClick('prev')} 
                                 className="p-3 pr-5 cursor-pointer"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" className="bi bi-arrow-up" viewBox="0 0 16 16">
-                                    <path fillRule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" className="bi bi-arrow-up" viewBox="0 0 16 16"><path fillRule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/></svg>
                             </button>
                             <button 
                                 onClick={() => handleClick('next')} 
                                 className="p-3 pr-5 cursor-pointer"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" className="bi bi-arrow-down" viewBox="0 0 16 16">
-                                    <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-                                </svg>
+                                    <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/></svg>
                             </button>
                         </div>
                     </div>
