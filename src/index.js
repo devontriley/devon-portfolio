@@ -34,9 +34,8 @@ const App = () => {
   useEffect(() => {
     const adjustDivHeight = () => {
       const myDiv = document.getElementById('root');
-      if (isAndroidMobile() && window.screen.availHeight > window.innerHeight) {
-        const offset = window.screen.availHeight - window.innerHeight;
-        myDiv.style.height = `calc(100vh - ${offset}px)`;
+      if (isAndroidMobile()) {
+        myDiv.style.height = window.innerHeight
       }
     }
 
