@@ -55,11 +55,8 @@ const App = () => {
   useEffect(() => {
     const adjustNavPosition = () => {
       const navElement = document.getElementById('primaryNav');
-      const containerHeight = document.getElementById('root').clientHeight;
-      const windowHeight = window.innerHeight;
 
-      navElement.style.position = 'absolute';
-      navElement.style.bottom = '20'
+      navElement.style.bottom = '20px'
 
       console.log('reposition nav')
     };
