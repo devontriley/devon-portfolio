@@ -55,12 +55,10 @@ const App = () => {
       const containerHeight = document.getElementById('root').clientHeight;
       const windowHeight = window.innerHeight;
 
-      if (containerHeight > windowHeight) {
-        navElement.style.position = 'static';
-      } else {
-        navElement.style.position = 'absolute';
-        navElement.style.bottom = '20'
-      }
+      navElement.style.position = 'absolute';
+      navElement.style.bottom = '20'
+
+      console.log('reposition nav')
     };
 
     // Call the adjustNavPosition function initially and on window resize
