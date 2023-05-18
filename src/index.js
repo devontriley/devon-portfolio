@@ -39,7 +39,7 @@ const App = () => {
 
       if (isAndroidMobile()) {
         console.log('update root height to: ' + window.innerHeight)
-        root.style.height = window.innerHeight
+        root.style.height = window.innerHeight + 'px'
       }
     }
 
