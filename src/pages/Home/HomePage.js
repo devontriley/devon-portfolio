@@ -23,7 +23,7 @@ const HomePage = () => {
                 <div className="w-5/6 md:w-3/4 max-w-5xl">
                     <div className="max-w-xl">
                         <p className="text-6xl text-bold mb-3">Heyo! </p>
-                        <p>I'm Devon Riley, a CMS engineer with a passion for building custom Wordpress themes and highly useable backends to boot. My primary tools are php, javascript, and css - but I'm working to become a skilled full stack developer with React/Vue and Express.</p>
+                        <p className="text-md">I'm Devon Riley, a CMS engineer with over a decade of experience building custom Wordpress themes alongside tailored backends. My primary skillset is with PHP, JavaScript, and CSS. However, I'm actively working to further enhance my proficiency as a full-stack developer, with a particular focus on React and Express.</p>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 md:gap-5 mt-5">
@@ -58,14 +58,6 @@ const HomePage = () => {
                             </ul>
                         </div>
                     </div>
-
-                    {/* <h2>Work</h2>
-                    {data.fields.project.map(project => (
-                        <div>
-                            <p><strong>{project.fields.title}</strong></p>
-                            <p>{project.fields.description}</p>
-                        </div>
-                    ))} */}
                 </div>
             )}
         </div>

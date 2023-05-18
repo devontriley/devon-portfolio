@@ -4,8 +4,8 @@ const ContactPage = () => {
     return (
         <div className="flex items-center justify-center h-screen">
             <div className="max-w-3xl text-center">
-                <h1 className="text-6xl font-bold">Contact</h1>
-                <p>
+                <h1 className="text-6xl font-bold mb-5">Get in touch!</h1>
+                <p className="text-lg">
                     <a href="mailto:devontriley@gmail.com" target="_blank" rel="noopener noreferrer">
                     devontriley@gmail.com    
                     </a>
