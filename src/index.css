@@ -9,6 +9,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  position: relative;
+}
+
 .noise {
   position: fixed;
   z-index: 100;
