@@ -33,9 +33,13 @@ const App = () => {
   // Resize container height when srolling on android devices to account for browser bar
   useEffect(() => {
     const adjustDivHeight = () => {
-      const myDiv = document.getElementById('root');
+      const root = document.getElementById('root');
+
+      console.log('isMobile', isAndroidMobile())
+
       if (isAndroidMobile()) {
-        myDiv.style.height = window.innerHeight
+        console.log('update root height to: ' + window.innerHeight)
+        root.style.height = window.innerHeight
       }
     }
 
