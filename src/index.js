@@ -26,6 +26,29 @@ const App = () => {
     })
   }, [])
 
+  const isAndroidMobile = () => {
+    return /Android/i.test(navigator.userAgent) && /Mobile/i.test(navigator.userAgent);
+  }
+
+  // Resize container height when srolling on android devices to account for browser bar
+  useEffect(() => {
+    const adjustDivHeight = () => {
+      const myDiv = document.getElementById('root');
+      if (isAndroidMobile() && window.screen.availHeight > window.innerHeight) {
+        const offset = window.screen.availHeight - window.innerHeight;
+        myDiv.style.height = `calc(100vh - ${offset}px)`;
+      }
+    }
+
+    window.addEventListener('resize', adjustDivHeight);
+    adjustDivHeight();
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', adjustDivHeight);
+    };
+  }, []);
+
   return (
     <>
       <Header routes={routes.filter((route) => route.name !== 'Work Detail')} />
