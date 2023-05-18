@@ -9,6 +9,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
+}
+
 .noise {
   position: fixed;
   z-index: 100;
