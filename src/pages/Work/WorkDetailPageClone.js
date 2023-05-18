@@ -147,57 +147,55 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
       }, [handleClick]);
 
     return (
-        <div>
-            <CSSTransition nodeRef={nodeRef} in={inProp} timeout={500} classNames="work-detail">
-                <div className="workDetailGrid w-screen h-screen grid lg:grid-flow-col lg:grid-cols-2"
-                    style={{ backgroundColor: `${bgColor}`}}
-                    data-animate-out={animateOut} 
-                    data-animate-direction={animateDirection}
-                    ref={nodeRef}
-                >
-                    <div className="workDetailImage relative z-20 overflow-hidden rounded-xl lg:order-2">
-                        <img src={work[currentWorkIndex].image} className="workImage absolute z-20 object-cover w-full h-full select-none" alt="" />
-                        <img src={crossfadeImage} className="absolute z-0 object-cover w-full h-full select-none" />
-                    </div>
-
-                    <div className="workDetailContent h-full relative z-10 flex pt-7 sm:pt-0 sm:items-center justify-center">
-                        <div className="workDescription" style={{ color: `${work[currentWorkIndex].textColor}` }}>
-                            <h1 className="text-4xl font-bold mb-3 select-none" style={{ color: `${work[currentWorkIndex].headerColor}`}}>
-                                <a href={work[currentWorkIndex].url} target="_blank">
-                                    {work[currentWorkIndex].name}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="inline-block ml-3" viewBox="0 0 16 16">
-                                        <path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                                        <path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                                    </svg>
-                                </a>
-                            </h1>
-                            {work[currentWorkIndex].companyDescription && <p className="text-sm italic">{work[currentWorkIndex].companyDescription}</p>}
-                            <div className="mt-5">
-                                <p className="font-bold">{work[currentWorkIndex].details}</p>
-                                <p className="select-none">{work[currentWorkIndex].description}</p>
-                            </div>
-                        </div>
-
-                        <div className="workDetailControls">
-                            <button 
-                                onClick={() => handleClick('prev')} 
-                                className="p-3 pr-5 cursor-pointer"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" className="bi bi-arrow-up" viewBox="0 0 16 16"><path fillRule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/></svg>
-                            </button>
-                            <button 
-                                onClick={() => handleClick('next')} 
-                                className="p-3 pr-5 cursor-pointer"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" className="bi bi-arrow-down" viewBox="0 0 16 16">
-                                    <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/></svg>
-                            </button>
-                        </div>
-                    </div>
-
+        <CSSTransition nodeRef={nodeRef} in={inProp} timeout={500} classNames="work-detail">
+            <div className="workDetailGrid w-screen min-h-full grid lg:grid-flow-col lg:grid-cols-2"
+                style={{ backgroundColor: `${bgColor}` }}
+                data-animate-out={animateOut} 
+                data-animate-direction={animateDirection}
+                ref={nodeRef}
+            >
+                <div className="workDetailImage relative z-20 overflow-hidden rounded-xl lg:order-2">
+                    <img src={work[currentWorkIndex].image} className="workImage absolute z-20 object-cover w-full h-full select-none" alt="" />
+                    <img src={crossfadeImage} className="absolute z-0 object-cover w-full h-full select-none" />
                 </div>
-            </CSSTransition>
-        </div>
+
+                <div className="workDetailContent h-full relative z-10 flex pt-7 lg:pt-0 sm:items-center justify-center">
+                    <div className="workDescription" style={{ color: `${work[currentWorkIndex].textColor}` }}>
+                        <h1 className="text-4xl font-bold mb-3 select-none" style={{ color: `${work[currentWorkIndex].headerColor}`}}>
+                            <a href={work[currentWorkIndex].url} target="_blank">
+                                {work[currentWorkIndex].name}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="inline-block ml-3" viewBox="0 0 16 16">
+                                    <path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                    <path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                </svg>
+                            </a>
+                        </h1>
+                        {work[currentWorkIndex].companyDescription && <p className="text-sm italic">{work[currentWorkIndex].companyDescription}</p>}
+                        <div className="mt-5">
+                            <p className="font-bold">{work[currentWorkIndex].details}</p>
+                            <p className="select-none">{work[currentWorkIndex].description}</p>
+                        </div>
+                    </div>
+
+                    <div className="workDetailControls">
+                        <button 
+                            onClick={() => handleClick('prev')} 
+                            className="p-3 pr-5 cursor-pointer"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" className="bi bi-arrow-up" viewBox="0 0 16 16"><path fillRule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/></svg>
+                        </button>
+                        <button 
+                            onClick={() => handleClick('next')} 
+                            className="p-3 pr-5 cursor-pointer"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" className="bi bi-arrow-down" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </CSSTransition>
     )
 }
 

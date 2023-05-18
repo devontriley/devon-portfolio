@@ -1,5 +1,6 @@
 .workDetailGrid {
     transition: background-color ease 1000ms;
+    padding-bottom: 130px;
 }
 
 .workDetailImage {
@@ -11,7 +12,7 @@
 }
 
 .workDetailControls {
-    position: absolute;
+    position: fixed;
     left: 50%;
     bottom: 70px;
     transform: translateX(-50%);
@@ -38,7 +39,6 @@
 @media (min-width: 640px) {
     .workDescription {
         width: 80%;
-        margin-bottom: 90px;
     }
 
     .workDetailContent {
@@ -47,11 +47,16 @@
 }
 
 @media (min-width: 1024px) {
+    .workDetailGrid {
+        padding-bottom: 0;
+    }
+
     .workDetailImage {
         margin: 70px 20px 90px 0;
     }
 
     .workDetailControls {
+        position: absolute;
         right: 0;
         left: auto;
         bottom: auto;

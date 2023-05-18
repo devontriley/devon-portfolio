@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './Home.css'
 // import fetchContent from '../../services/ContentfulService'
 
 const HomePage = () => {
@@ -16,7 +17,7 @@ const HomePage = () => {
     // }, [])
 
     return (
-        <div className={`flex items-center justify-center h-screen`}>
+        <div className={`homeContent flex items-center justify-center`}>
             {isLoading ? (
                 <p>Loading...</p>
             ) : (

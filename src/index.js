@@ -88,7 +88,7 @@ const App = () => {
             unmountOnExit
           >
             {(state) => (
-              <div ref={nodeRef} className="page">
+              <div ref={nodeRef} className="page h-full">
                 {currentOutlet}
               </div>
             )}

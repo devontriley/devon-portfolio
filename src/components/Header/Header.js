@@ -19,8 +19,8 @@ const HeaderNavLink = ({ name, path }) => {
 const Header = ({ routes }) => {
     return (
         <>
-            <span className={`absolute z-30 top-0 left-1/2 -translate-x-1/2 text-xl drop-shadow-lg rounded-b-lg py-2 px-7 bg-black text-white whitespace-nowrap`}>Devon Riley</span>
-            <nav id="primaryNav" className="absolute z-30 bottom-5 left-1/2 -translate-x-1/2 border-solid border border-black rounded-full py-3 px-4 md:px-7 bg-white drop-shadow-md">
+            <span className={`fixed z-30 top-0 left-1/2 -translate-x-1/2 text-xl drop-shadow-lg rounded-b-lg py-2 px-7 bg-black text-white whitespace-nowrap`}>Devon Riley</span>
+            <nav id="primaryNav" className="fixed z-30 bottom-5 left-1/2 -translate-x-1/2 border-solid border border-black rounded-full py-3 px-4 md:px-7 bg-white drop-shadow-md">
                 <ul className="whitespace-nowrap">
                     <HeaderNavLink name="About" path="/" />
                     <HeaderNavLink name="Work" path="/work" />
