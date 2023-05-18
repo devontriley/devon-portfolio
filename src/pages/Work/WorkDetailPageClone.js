@@ -9,7 +9,7 @@ const work = [
         details: 'Wordpress Multisite, WooCommerce, Bootstrap, Gulp',
         companyDescription: 'Vinfen is a leading nonprofit that specializes in providing community-based services to individuals with disabilities.',
         description: 'For years Vinfen was stuck with an overpriced, outdated, and subpar hosting provider. I migrated their five websites to a new hosting provider under a single Wordpress Multisite - allowing the administrators to easily manage everything from a single dashboard. I also built two custom Wordpress themes with an extensive module library to recreate their existing content with a modern look and feel.',
-        image: 'vinfen_ui_mockup.jpg',
+        image: '/images/vinfen_ui_mockup.jpg',
         url: 'https://vinfen.org',
         headerColor: '#BDE551',
         textColor: '#ffffff',
@@ -20,7 +20,7 @@ const work = [
         details: 'Wordpress, GSAP, Bootstrap, Webpack',
         companyDescription: 'Alarad Capital is an investment firm built to grow the wealth of it\'s investors for the long term.',
         description: 'The primary challenge to overcome was true differentiation from the competition. I helped build a custom Wordpress theme based on the beautiful design system my partners developed. We thoughtfully incorporated animations and transitions to create an elegant and sophisticated feel.',
-        image: 'alarad_ui_mockup.jpg',
+        image: '/images/alarad_ui_mockup.jpg',
         url: 'https://alaradcapital.com',
         headerColor: '#D89663',
         textColor: '#ffffff',
@@ -31,7 +31,7 @@ const work = [
         details: 'Core dna, Vue.js, Bootstrap, Webpack',
         companyDescription: 'RANDYS Worldwide is the leading supplier in the United States for differential gears, axles, drivelines, and more.',
         description: 'My team was hired to help RANDYS improve their user interface, assist in developing new features, and provide ongoing development support. The most exicting feature I helped develop was the Parts Portal - a Vue.js "garage" allowing users to filter results based on their selected vehicle. I also implemented a fresh new UI that included new category and product display pages.',
-        image: 'randys_ui_mockup.jpg',
+        image: '/images/randys_ui_mockup.jpg',
         url: 'https://randysworldwide.com',
         headerColor: '#111111',
         textColor: '#ffffff',
@@ -42,7 +42,7 @@ const work = [
         details: 'Wordpress, Bootstrap, Gulp',
         companyDescription: 'Steel Root is the first cybersecurity firm to provide end-to-end services for the U.S. Defense Industrial Base.',
         description: 'Visual identity and publisher useablility were the main goals of this project. I developed a custom Wordpress theme with a particular focus on content management. I built a modular system that allowed the stakeholders to easily create and edit custom pages.',
-        image: 'steelroot_ui_mockup.jpg',
+        image: '/images/steelroot_ui_mockup.jpg',
         url: 'https://steelroot.us',
         headerColor: '#F7525A',
         textColor: '#ffffff',
@@ -53,7 +53,7 @@ const work = [
         details: 'Shopify, Custom Liquid theme',
         companyDescription: 'Safesoak is a product that allows people with neuropahty to safely soak their feet.',
         description: 'This project was my first opportunity to build a custom Shopify theme. I learned the Liquid templating language which enabled me to create an easily editable backend as well as replicate the UI system that my team designed.',
-        image: 'safesoak_ui_mockup.jpg',
+        image: '/images/safesoak_ui_mockup.jpg',
         url: 'https://mysafesoak.com',
         headerColor: '#6ECBE8',
         textColor: '#ffffff',
@@ -64,7 +64,7 @@ const work = [
         details: 'Wordpress, GSAP, Paper.js, Bootstrap, Gulp',
         companyDescription: 'Transhealth is a trans-led organization serving trans and gender-diverse individuals and families.',
         description: 'I\'m proud to have had the opportunity to work with such a fantastic organization. I was tasked with creating a new website that brought their new visual identity to the web. I developed a custom Wordpress theme that was lightweight and easily editable.',
-        image: 'transhealth_ui_mockup.jpg',
+        image: '/images/transhealth_ui_mockup.jpg',
         url: 'https://transhealth.org',
         headerColor: '#253B5A',
         textColor: '#ffffff',
@@ -75,7 +75,7 @@ const work = [
         details: 'Wordpress, WooCommerce, Bootstrap, Gulp',
         companyDescription: 'Fully Human Supplements offer all-natural, plant-based supplements to fight chronic inflammation.',
         description: 'Fully Human was in need of an ecommerce website that could effectively promote their brand, educate their customers, and sell their products. I built a custom Wordpress theme that utilized WooCommerce to satisfy the needs of the stakeholders and their customers.',
-        image: 'fhs_ui_mockup.jpg',
+        image: '/images/fhs_ui_mockup.jpg',
         url: 'https://fullyhumansupplements.com',
         headerColor: '#01F8E0',
         textColor: '#ffffff',
@@ -86,7 +86,7 @@ const work = [
         details: 'Wordpress, Bootstrap, Gulp, UI Design',
         companyDescription: 'Universal Stone is a leading importer of top quality natural stone products from around the world',
         description: 'Universal Stone had been stuck with a set of poorly designed and developed Wordpress websites for years. I merged both sites into one with an updated UI. I\'m currently working on several new features including a Dropbox integration for users to upload project photos, and a live product inventory that pulls data from their content management software.',
-        image: 'usi_ui_mockup.jpg',
+        image: '/images/usi_ui_mockup.jpg',
         url: 'https://unistoneimports.com',
         headerColor: '#273814',
         textColor: '#ffffff',
@@ -97,7 +97,7 @@ const work = [
         details: 'Wordpress, GSAP, Bootstrap, Gulp',
         companyDescription: 'DriveForce sells golf\'s first-ever pre-round performance blend, designed to keep you at your best for a full 18.',
         description: 'DriveForce is a startup that worked with my team from their conception. Their website needed to strongly convey their brand, and effectively market and sell their product. I used Wordpress and WooCommerce to develop a custom theme with a modular content system that was used to achieve these goals.',
-        image: 'driveforce_ui_mockup.jpg',
+        image: '/images/driveforce_ui_mockup.jpg',
         url: 'https://devonr52.sg-host.com',
         headerColor: '#DB4443',
         textColor: '#ffffff',
@@ -117,7 +117,7 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
     const handleClick = useCallback((direction = 'prev') => {
         let nextIndex = (currentWorkIndex + (direction === 'prev' ? -1 : 1) + work.length) % work.length
 
-        setCrossfadeImage('/images/'+work[nextIndex].image)
+        setCrossfadeImage(work[nextIndex].image)
         setAnimateDirection(direction)
         setInProp(false)
 
@@ -153,7 +153,7 @@ const WorkDetailPage = ({ WorkDetailPage }) => {
                     ref={nodeRef}
                 >
                     <div className="workDetailImage relative z-20 overflow-hidden rounded-xl lg:order-2">
-                        <img src={`/images/${work[currentWorkIndex].image}`} className="workImage absolute z-20 object-cover w-full h-full select-none" alt="" />
+                        <img src={work[currentWorkIndex].image} className="workImage absolute z-20 object-cover w-full h-full select-none" alt="" />
                         <img src={crossfadeImage} className="absolute z-0 object-cover w-full h-full select-none" />
                     </div>
 

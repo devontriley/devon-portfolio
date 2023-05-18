@@ -18,13 +18,13 @@ const App = () => {
 
   // Preload images for Work Detail Pages
   useEffect(() => {
-    const images = ['fpo_1.png', 'fpo_2.png', 'fpo_3.png', 'fpo_4.png', 'fpo_5.png', 'fpo_6.png', 'fpo_7.png', 'fpo_8.png', 'fpo_9.png']
+    const images = ['alarad_ui_mockup.jpg', 'driveforce_ui_mockup.jpg', 'fhs_ui_mockup.jpg', 'randys_ui_mockup.jpg', 'safesoak_ui_mockup.jpg', 'steelroot_ui_mockup.jpg', 'transhealth_ui_mockup.jpg', 'usi_ui_mockup.jpg', 'vinfen_ui_mockup.jpg']
 
     images.forEach((image) => {
         const img = new Image()
-        img.src = '/images/'+image
+        img.src = 'images/'+image
     })
-}, [])
+  }, [])
 
   return (
     <>
