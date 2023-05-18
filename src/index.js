@@ -48,6 +48,30 @@ const App = () => {
       window.removeEventListener('resize', adjustDivHeight);
     };
   }, []);
+  
+  useEffect(() => {
+    const adjustNavPosition = () => {
+      const navElement = document.getElementById('primaryNav');
+      const containerHeight = document.getElementById('root').clientHeight;
+      const windowHeight = window.innerHeight;
+
+      if (containerHeight > windowHeight) {
+        navElement.style.position = 'static';
+      } else {
+        navElement.style.position = 'absolute';
+        navElement.style.bottom = '20'
+      }
+    };
+
+    // Call the adjustNavPosition function initially and on window resize
+    window.addEventListener('resize', adjustNavPosition);
+    adjustNavPosition();
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', adjustNavPosition);
+    };
+  }, []);
 
   return (
     <>
