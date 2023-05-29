@@ -24,7 +24,7 @@ const HomePage = () => {
                 <div className="w-5/6 md:w-3/4 max-w-5xl">
                     <div className="max-w-xl">
                         <p className="text-6xl text-bold mb-3">Heyo! </p>
-                        <p className="text-md">I'm Devon Riley, a talented frontend engineer with over a decade of experience building custom websites utilizing Wordpress as my CMS of choice. My background in design provides me the aesthetic sensibility to transform beautiful designs into seamless and functional user experiences. Currently, I'm broadening my skillset to become a talented full-stack engineer, driven by a passion for continuous growth and innovation.
+                        <p className="text-md">I'm Devon Riley, a talented frontend engineer with over a decade of experience building custom websites utilizing Wordpress as my CMS of choice. My background in design provides me the aesthetic sensibility to transform beautiful designs into seamless and functional user experiences. Currently, I'm broadening my skillset to become a talented full-stack engineer, driven by a passion for continuous growth and innovation.</p>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 md:gap-5 mt-5">
